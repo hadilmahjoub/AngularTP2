@@ -1,0 +1,5 @@
+<li class="list-group-item" (click)="returnSelectedCv()">
+  <img src="assets/images/{{ cv.path | defaultImage }}" alt="{{ cv.firstname }}-{{ cv.name }}" class="rounded-circle" height="50px"
+    width="50px" />
+  {{ cv.firstname }} {{ cv.name }}
+</li>

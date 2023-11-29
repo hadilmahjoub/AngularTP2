@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col m-3">
+      <h1>TODOS LIST</h1>
+      <ol class="list-group">
+        <li *ngFor="let todo of todos" class="list-group-item">
+          <i
+            (click)="deleteTodo(todo)"
+            class="fa fa-trash m-2"
+            aria-hidden="true"
+            style="color: red; cursor: pointer"
+          ></i>
+          <b> {{ todo.name }} : </b> {{ todo.content }}
+        </li>
+      </ol>
+    </div>
+
+    <div class="col m-3">
+      <label for="name">Name</label><br />
+      <input type="text" class="form-control" [(ngModel)]="todo.name" />
+
+      <div class="container m-3"></div>
+
+      <label for="content">Content</label>
+      <input type="text" class="form-control" [(ngModel)]="todo.content" />
+
+      <div class="container m-3"></div>
+
+      <button
+        [disabled]="!(todo.name.length && todo.content.length)"
+        class="btn btn-primary"
+        (click)="addTodo()"
+      >
+        Add Todo
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="embauches" class="container">
+  <h2>SELECTED CVS LIST</h2>
+  <ol class="list-group">
+    <li class="list-group-item" *ngFor="let item of embauches">
+      <img
+        src="assets/images/{{ item.path | defaultImage }}"
+        alt="{{ item.firstname }}-{{ item.name }}"
+        class="rounded-circle"
+        height="50px"
+        width="50px"
+      />
+      {{ item.firstname }} {{ item.name }}
+    </li>
+  </ol>
+</div>
