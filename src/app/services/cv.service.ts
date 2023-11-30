@@ -25,4 +25,9 @@ export class CvService {
     ];
     return this.cvs;
   }
+
+  getCvById(id: number): Cv {
+    const cv = this.cvs.find((cv) => cv.id == id);
+    return cv!;
+  }
 }

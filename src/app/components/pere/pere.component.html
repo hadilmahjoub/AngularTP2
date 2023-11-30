@@ -1,0 +1,24 @@
+<div class="p-3 m-5" [style.backgroundColor]="bgColor">
+  <h2>Parent component !</h2>
+  <br />
+  <input
+    (change)="updateColor(colorInput.value)"
+    type="text"
+    class="form-control"
+    name="color"
+    #colorInput
+  />
+  <br />
+  <button (click)="resetColor()" class="btn btn-primary">Reset Color</button>
+  <br />
+  <app-fils
+    (valueChange)="showValue($event)"
+    (bgColorChange)="updateParentBgColor($event)"
+    [color]="bgColor"
+  />
+  <br />
+
+  <h3 style="color: black">
+    Result: <b>{{ result }}</b>
+  </h3>
+</div>

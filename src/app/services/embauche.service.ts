@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cv } from '../models/cv';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { Cv } from '../models/cv';
 export class EmbaucheService {
   private cvs!: Cv[];
 
-  constructor() {
+  constructor(private toastr: ToastrService) {
     this.cvs = [];
   }
 
@@ -19,8 +20,9 @@ export class EmbaucheService {
     const index = this.cvs.indexOf(cv);
     if (index < 0) {
       this.cvs.push(cv);
+      this.toastr.success(`${cv.name} est embauché avec succès`);
     } else {
-      alert(`${cv.name} est deja embauché`);
+      this.toastr.error(`${cv.name} est deja embauché`);
     }
   }
 

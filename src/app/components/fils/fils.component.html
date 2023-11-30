@@ -1,0 +1,21 @@
+<div class="p-5">
+  <div class="p-5" style="background-color: white">
+    <h2>Child component</h2>
+    <h3>
+      Parent background color is
+      <b [style.color]="color">
+        {{ color }}
+      </b>
+
+      <hr />
+
+      <button (click)="incrementer()" class="btn btn-primary">+</button>
+
+      <hr />
+
+      <button (click)="updateParentBgColor()" class="btn btn-primary">
+        TACK MY FAVORITE COLOR
+      </button>
+    </h3>
+  </div>
+</div>

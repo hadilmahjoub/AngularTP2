@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +14,14 @@ import { ListComponent } from './components/list/list.component';
 import { CvComponent } from './components/cv/cv.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EmbaucheComponent } from './components/embauche/embauche.component';
+import { CarteVisiteComponent } from './components/carte-visite/carte-visite.component';
+import { FilsComponent } from './components/fils/fils.component';
+import { PereComponent } from './components/pere/pere.component';
+import { MiniWordComponent } from './components/mini-word/mini-word.component';
+import { RainbowInputComponent } from './components/rainbow-input/rainbow-input.component';
+import { RainbowDirective } from './directives/rainbow.directive';
+import { HeaderComponent } from './components/header/header.component';
+import { CvDetailComponent } from './components/cv-detail/cv-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +32,28 @@ import { EmbaucheComponent } from './components/embauche/embauche.component';
     ListComponent,
     CvComponent,
     DetailComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    CarteVisiteComponent,
+    FilsComponent,
+    PereComponent,
+    MiniWordComponent,
+    RainbowInputComponent,
+    RainbowDirective,
+    HeaderComponent,
+    CvDetailComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      // timeOut: 3000,
+      preventDuplicates: true,
+      // progressBar: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,45 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: white"
+>
+  <div class="container-fluid justify-content-start">
+    <a
+      class="navbar-brand"
+      [routerLink]="['']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active text-primary"
+      >RT4 2023</a
+    >
+    <a
+      class="nav-link m-3"
+      [routerLink]="['cv']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Cv</a
+    >
+
+    <a
+      class="nav-link m-3"
+      [routerLink]="['todo']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Todo</a
+    >
+
+    <a
+      class="nav-link m-3"
+      [routerLink]="['word']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Mini Word</a
+    >
+
+    <a
+      class="nav-link m-3"
+      [routerLink]="['rainbow']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Rainbow Input</a
+    >
+  </div>
+</nav>

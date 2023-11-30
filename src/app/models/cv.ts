@@ -1,4 +1,5 @@
 export class Cv {
+  [x: string]: any;
   constructor(
     public id = 0,
     public name = '',
