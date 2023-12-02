@@ -22,6 +22,10 @@ import { RainbowInputComponent } from './components/rainbow-input/rainbow-input.
 import { RainbowDirective } from './directives/rainbow.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { CvDetailComponent } from './components/cv-detail/cv-detail.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
+import { AddCvComponent } from './components/add-cv/add-cv.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,10 @@ import { CvDetailComponent } from './components/cv-detail/cv-detail.component';
     RainbowDirective,
     HeaderComponent,
     CvDetailComponent,
+    NotFoundComponent,
+    TestFormComponent,
+    AddCvComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

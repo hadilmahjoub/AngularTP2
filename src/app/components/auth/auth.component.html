@@ -1,0 +1,61 @@
+<form #login="ngForm" (ngSubmit)="onLogin(login)">
+  <div class="my-2">
+    <label for="email">Email</label>
+    <input
+      required
+      class="form-control mb-3"
+      type="email"
+      name="email"
+      id="email"
+      email
+      ngModel
+      #email="ngModel"
+    />
+
+    <div
+      *ngIf="email.errors?.['required'] && email.touched"
+      class="alert alert-danger"
+    >
+      Email is required.
+    </div>
+    <div *ngIf="email.invalid && email.dirty" class="alert alert-danger">
+      Veuillez entrer un email valid
+    </div>
+  </div>
+
+  <div class="my-2">
+    <label for="pass">Password</label>
+    <input
+      required
+      minlength="4"
+      class="form-control mb-3"
+      type="password"
+      name="pass"
+      id="pass"
+      password
+      ngModel
+      #pass="ngModel"
+    />
+
+    <div
+      *ngIf="pass.errors?.['required'] && pass.touched"
+      class="alert alert-danger"
+    >
+      Password is required.
+    </div>
+
+    <div *ngIf="pass.invalid && pass.dirty" class="alert alert-danger">
+      Veuillez entrer un password avec 4 caractères
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center m-4">
+    <button
+      [disabled]="login.invalid"
+      class="btn btn-success px-4"
+      (click)="onLogin(login)"
+    >
+      Login
+    </button>
+  </div>
+</form>

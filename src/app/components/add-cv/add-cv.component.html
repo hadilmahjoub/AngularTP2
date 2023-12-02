@@ -1,0 +1,45 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-8">
+    <form #add="ngForm" (ngSubmit)="onSubmit(add)">
+      <div class="my-2">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" id="name" ngModel name="name" />
+      </div>
+
+      <div class="my-3">
+        <label for="firstname">Firstname</label>
+        <input
+          class="form-control"
+          type="text"
+          id="firstname"
+          ngModel
+          name="firstname"
+        />
+      </div>
+
+      <div class="my-3">
+        <label for="path">Path</label>
+        <input class="form-control" type="text" id="path" ngModel name="path" />
+      </div>
+
+      <div class="my-3">
+        <label for="job">Job</label>
+        <input class="form-control" type="text" id="job" ngModel name="job" />
+      </div>
+
+      <div class="my-3">
+        <label for="cin">Cin</label>
+        <input class="form-control" type="number" id="cin" ngModel name="cin" />
+      </div>
+
+      <div class="my-3">
+        <label for="age">Age</label>
+        <input class="form-control" type="number" id="age" ngModel name="age" />
+      </div>
+
+      <div class="d-flex justify-content-center my-4">
+        <button class="btn btn-primary px-4" (click)="onSubmit(add)">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

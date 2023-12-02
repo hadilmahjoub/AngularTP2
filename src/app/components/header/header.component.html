@@ -12,10 +12,25 @@
     >
     <a
       class="nav-link m-3"
+      [routerLink]="['login']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Login</a
+    >
+    <a
+      class="nav-link m-3"
       [routerLink]="['cv']"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       >Cv</a
+    >
+
+    <a
+      class="nav-link m-3"
+      [routerLink]="['cv/add']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Add Cv</a
     >
 
     <a
@@ -40,6 +55,14 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       >Rainbow Input</a
+    >
+
+    <a
+      class="nav-link m-3"
+      [routerLink]="['**']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >404</a
     >
   </div>
 </nav>
