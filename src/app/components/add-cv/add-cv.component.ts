@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Cv } from 'src/app/models/cv';
 import { CvService } from 'src/app/services/cv.service';
 
@@ -11,11 +12,9 @@ import { CvService } from 'src/app/services/cv.service';
 export class AddCvComponent implements OnInit {
   cv!: Cv;
 
-  constructor(private cvService: CvService) {}
+  constructor(private cvService: CvService, private router: Router) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
     console.log(form.form.value);
@@ -30,5 +29,8 @@ export class AddCvComponent implements OnInit {
       res.age
     );
     console.log(this.cv);
+    this.cvService.addCv(this.cv);
+    this.cv = new Cv();
+    this.router.navigate(['cv']);
   }
 }

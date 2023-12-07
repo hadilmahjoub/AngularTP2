@@ -1,4 +1,5 @@
 <ol class="list-group">
-  <app-item *ngFor="let item of cvs" (selected)="selectCv($event)" [cv]="item" />
+  <app-item *ngFor="let item of cvs" [cv]="item" />
 
+  <!-- on enlève le binding (selected)="selectCv($event)" -->
 </ol>

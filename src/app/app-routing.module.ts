@@ -11,6 +11,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { AddCvComponent } from './components/add-cv/add-cv.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { ImageCarouselComponent } from './components/image-carousel/image-carousel.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'test-form',
     component: TestFormComponent,
+  },
+  {
+    path: 'app-image-carousel',
+    component: ImageCarouselComponent
   },
   {
     path: '**',

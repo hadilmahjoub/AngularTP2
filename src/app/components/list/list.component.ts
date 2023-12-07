@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Cv } from 'src/app/models/cv';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-list',
@@ -9,16 +11,21 @@ import { Cv } from 'src/app/models/cv';
 export class ListComponent implements OnInit {
   @Input({ required: true }) cvs!: Cv[];
 
-  @Output() selectedCv = new EventEmitter<Cv>();
+  //* NO LONGER IN NEED
+  // @Output() selectedCv = new EventEmitter<Cv>();
 
-  constructor() {}
+  constructor(
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {}
 
-  selectCv(selected: Cv) {
-    console.log(selected);
-    this.selectedCv.emit(selected);
+  selectCv(selectedCv: Cv) {
+    console.log(selectedCv);
+
+    //* NO LONGER IN NEED
+    // this.selectedCv.emit(selectedCv);
+    
+    this.sharedService.selectCv(selectedCv); // Utiliser le Subject pour émettre l'événement
   }
 }
-
-// DONE

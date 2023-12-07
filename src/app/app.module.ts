@@ -1,9 +1,9 @@
-import { NgModule, } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { AddCvComponent } from './components/add-cv/add-cv.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { provideRouter } from '@angular/router';
+import { ImageCarouselComponent } from './components/image-carousel/image-carousel.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +51,14 @@ import { AuthComponent } from './components/auth/auth.component';
     TestFormComponent,
     AddCvComponent,
     AuthComponent,
+    ImageCarouselComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       // timeOut: 3000,
       preventDuplicates: true,

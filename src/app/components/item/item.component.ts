@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Cv } from 'src/app/models/cv';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-item',
@@ -10,13 +11,17 @@ export class ItemComponent implements OnInit {
   @Input({ required: true })
   cv!: Cv;
 
-  @Output() selected = new EventEmitter<Cv>();
+  //* NO LONGER IN NEED
+  // @Output() selected = new EventEmitter<Cv>();
 
-  constructor() {}
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {}
 
   returnSelectedCv() {
-    this.selected.emit(this.cv);
+    //* NO LONGER IN NEED
+    // this.selected.emit(this.cv);
+
+    this.sharedService.selectCv(this.cv);
   }
 }
