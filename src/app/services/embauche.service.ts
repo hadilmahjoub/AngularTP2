@@ -30,6 +30,7 @@ export class EmbaucheService {
     const index = this.cvs.indexOf(cv);
     if (index >= 0) {
       this.cvs.splice(index, 1);
+      this.toastr.success(`${cv.name} est debauché avec succès`);
     }
   }
 }

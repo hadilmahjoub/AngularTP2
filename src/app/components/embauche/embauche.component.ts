@@ -10,9 +10,7 @@ import { EmbaucheService } from 'src/app/services/embauche.service';
 export class EmbaucheComponent implements OnInit {
   embauches!: Cv[];
 
-  constructor(
-    private embaucheService: EmbaucheService
-  ) {}
+  constructor(private embaucheService: EmbaucheService) {}
 
   ngOnInit(): void {
     this.embauches = this.embaucheService.getEmbauches();
@@ -23,5 +21,9 @@ export class EmbaucheComponent implements OnInit {
     //   new Cv(5, 'Test', 'Test', '', 'CEO', 12345000, 55),
     //   new Cv(6, 'Test2', 'Test2', '', 'Manager', 11100000, 55),
     // ]
+  }
+
+  debaucher(cv: Cv) {
+    this.embaucheService.debaucher(cv);
   }
 }

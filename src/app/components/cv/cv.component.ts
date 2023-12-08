@@ -20,7 +20,17 @@ export class CvComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cvService.getCvsAPI().subscribe((cvs) => (this.cvs = cvs));
+    this.cvService.getCvsAPI().subscribe(
+      (cvs) => {
+        this.toastr.success('API Data Loaded Succesfully');
+        this.cvs = cvs;
+      },
+      (error) => {
+        console.log('FETCH ERROR IN CvComponent : ', error.message);
+        this.toastr.error('Could not Load API Data');
+        this.cvs = this.cvService.getCvs();
+      }
+    );
 
     this.sharedService.selectedCv$.subscribe((cv) => this.selectCv(cv));
   }

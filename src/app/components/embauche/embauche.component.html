@@ -1,15 +1,26 @@
 <div *ngIf="embauches" class="container">
   <h2>SELECTED CVS LIST</h2>
   <ol class="list-group">
-    <li class="list-group-item" *ngFor="let item of embauches">
-      <img
-        src="assets/images/{{ item.path | defaultImage }}"
-        alt="{{ item.firstname }}-{{ item.name }}"
-        class="rounded-circle"
-        height="50px"
-        width="50px"
-      />
-      {{ item.firstname }} {{ item.name }}
+    <li
+      class="list-group-item d-flex justify-content-between"
+      *ngFor="let item of embauches"
+    >
+      <div>
+        <img
+          src="assets/images/{{ item.path | defaultImage }}"
+          alt="{{ item.firstname }}-{{ item.name }}"
+          class="rounded-circle"
+          height="50px"
+          width="50px"
+        />
+        {{ item.firstname }} {{ item.name }}
+      </div>
+
+      <i
+        class="fa fa-solid fa-trash"
+        (click)="debaucher(item)"
+        style="font-size: medium; color: red; cursor: pointer"
+      ></i>
     </li>
   </ol>
 </div>
