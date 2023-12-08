@@ -3,8 +3,9 @@ import { Cv } from '../models/cv';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
-const API_LINK = 'https://apilb.tridevs.net/api/personnes';
+const API_LINK = 'https://apil.tridevs.net/api/personnes';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ const API_LINK = 'https://apilb.tridevs.net/api/personnes';
 export class CvService {
   private cvs!: Cv[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private toastr : ToastrService) {
     this.cvs = [
       new Cv(
         1,
@@ -41,12 +42,11 @@ export class CvService {
 
       catchError((error) => {
         console.log(error.message);
+        this.toastr.error('Could not Load API Data');
 
         return of(this.getCvs());
       })
     );
-
-    // return this.http.get<Cv[]>(API_LINK);
   }
 
   getCvById(id: number): Cv {

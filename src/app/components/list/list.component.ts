@@ -26,6 +26,6 @@ export class ListComponent implements OnInit {
     //* NO LONGER IN NEED
     // this.selectedCv.emit(selectedCv);
     
-    this.sharedService.selectCv(selectedCv); // Utiliser le Subject pour émettre l'événement
+    this.sharedService.sendCv(selectedCv); // Utiliser le Subject pour émettre l'événement
   }
 }

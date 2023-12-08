@@ -22,6 +22,8 @@ export class ItemComponent implements OnInit {
     //* NO LONGER IN NEED
     // this.selected.emit(this.cv);
 
-    this.sharedService.selectCv(this.cv);
+    console.log('SELECTED CV in ItemCompoment', this.cv);
+
+    this.sharedService.sendCv(this.cv);
   }
 }

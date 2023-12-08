@@ -10,7 +10,8 @@ export class SharedService {
 
   selectedCv$ = this.selectedCvSubject.asObservable();
 
-  selectCv(cv: Cv) {
+  sendCv(cv: Cv) {
+    console.log('SELECTED CV IN SharedService',cv);
     this.selectedCvSubject.next(cv);
   }
 }
